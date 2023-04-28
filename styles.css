@@ -1,113 +1,92 @@
 html {
     background-color:#020659;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 body {
+    background-color: white;
     width: 375px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color:red;
     margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
-ul {
-    overflow: hidden;
-    max-height: 0;
-    transition: max-height .2s ease-out;
-}
-label {
-    cursor: pointer;
-    display: inline-block;
-    padding: 28px 20px;
-    position: relative;
-    user-select: none;
-}
-label span {
-    background-color: #ffffff;
-    display: block;
-    height: 2px;
-    position: relative;
-    transition: background-color .2s ease-out;
-    width: 18px;
-}
-label span:before, label span:after {
-    background: #ffffff;
-    content: '';
-    display: block;
-    height: 100%;
-    position: absolute;
-    transition: all .2s ease-out;
-    width: 100%;
-}
-label span:before {
-    top: 5px;
-}
-label span:after {
-    top: -5px;
-}
-input {
-    display: none;
-}
-input:checked ~ ul {
-    max-height: 500px;
-}
-input:checked ~ label span {
-    background: transparent;
-}
-input:checked ~ label span:before {
-    transform: rotate(-45deg);
-}
-input:checked ~ label span:after {
-    transform: rotate(45deg);
-}
-input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps) span:after {
-    top: 0;
+header {
+    background: linear-gradient(to right, #2104d9,black);
+    color: white;
+    padding-left: 25px;
+    padding-right: 25px;
 }
 
-@media screen and (min-width:834px) {
-    ul {
-        overflow: visible;
-        position: absolute;
-        top: 0;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    }
-    label span, input {
-        display: none;
-    }
+li:first-of-type {
+    font-variant: small-caps;
+}
+/*Swapping Nav & Header*/
+.container {
+    display: grid;
 }
 
-#trending ::-webkit-scrollbar {
-
+h1 {
+    font-size: 1.25em;
+    text-transform: uppercase;
 }
-#trending ::-webkit-scrollbar-track {
 
+h2, h3 {
+    font-size: 1em;
+    text-transform: uppercase;
+    color: #590242;
 }
-#trending ::-webkit-scrollbar-thumb {
 
+p, dl, dd {
+    font-size: 1em;
 }
-#trending ::-webkit-scrollbar-thumb:hover {
 
+footer p {
+    font-size: 0.75em;
 }
-#playlists ::-webkit-scrollbar, #curated ::-webkit-scrollbar {
 
+#playlists {
+    background-color: #2699FB;
+    color: white;
+    padding-bottom: 10px;
 }
-#playlists ::-webkit-scrollbar-track, #curated ::-webkit-scrollbar-track  {
 
+#curatedPlaylists {
+    background-color: #020873;
+    color: white;
+    padding-bottom: 10px;
+    width: 375px;
 }
-#playlists ::-webkit-scrollbar-thumb, #curated ::-webkit-scrollbar-thumb {
 
+section h2 {
+    background-color: white;
+ 
 }
-#playlists ::-webkit-scrollbar-thumb:hover, #curated ::-webkit-scrollbar-thumb:hover {
+
+#playlists figure {
+    background-color: #0d8dfb;
+}
+
+#curatedPlaylists figure {
+    background-color: #020659;
+}
+
+input[type="button"] {
+    color: white;
+    background-color: #590242;
+    padding: 5px 25px;
+    margin-left: 25px;
+    margin-top: 10px;
+    border-style: solid;
+    border-color: black;
+    border-radius: 5px;
+}
+
+footer{
+    text-align: center;
+    margin-top: 10px;
+    padding-bottom: 10px;
 
 }
 
-audio::-webkit-media-controls-mute-button {
-
-}
-audio::-webkit-media-controls-play-button {
-
-}
-audio::-webkit-media-controls-enclosure {
-
-}
 
