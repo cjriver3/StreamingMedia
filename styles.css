@@ -1,3 +1,13 @@
-body {
-    background-color: red;
+html {
+    background-color:#020659;
 }
+
+body {
+    width: 375px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color:red;
+    margin: 0 auto;
+
+
+}
+
