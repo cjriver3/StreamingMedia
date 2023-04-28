@@ -9,7 +9,7 @@
     </head>
     <body>
            <!-- NOTE: Leave all the content in this order; do not rearrange the text. This is the order it needs to be for reading:left to tight, top to bottom. Use CSS to visually order it for viewing. Also, note the title and heading that have been applied.-->
-        <div class="topContainer">
+        
             <header>
                 <h1>Smooth Jazz</h1>
                 <p>This station is dedicated to the soothing sounds of smooth jazz. This genre of commercially oriented crossover jazz became dominant in the 1980s and early 1990s.</p>
@@ -17,6 +17,9 @@
                 
 
             <nav>
+                <h2>Main Navigation</h2>
+                <input type="checkbox" id="dropdown">
+                <label for="dropdown"><span></span></label>
                 <ul class="menu">
                     <li><a href="#">MuzakMaker</a></li>
                     <li><a href="#">Trending Songs</a></li>
@@ -25,10 +28,10 @@
                     <li><a href="#"><img src="duke-silver.png" alt="Photo of legendary sax player: Duke Silver of Indiana"></a></li>
                 </ul>
             </nav>
-        </div>
+       
 
          <main>
-            <section id="trending">
+            <article id="trending">
                 <h2>Trending Songs</h2>
                 <div class="scroll">  
                     <section class="Album">
@@ -102,10 +105,10 @@
                     </section>
                 </div>
                 <input class="button" type="button" value="More trending">
-            </section>
+            </article>
             
-            <div id="playlistContainer">
-                <section id="playlists">
+            <div id="playlistWrapper">
+                <article id="playlists">
                     <h2>Your Playlists</h2>
                     <div class="scroll">
                         <section>
@@ -149,13 +152,12 @@
                             </figure>
                         </section>
                     </div>
-                </section>
+                </article>
                 <input class="button" type="button" value="All your playlists">
 
-                <section id="curatedPlaylists">
+                <article id="curatedPlaylists">
                     <h2>Curated Playlists</h2>
                     <div class="scroll">
-
                         <section>
                             <figure>
                                 <img src="boozy-brunch-cover.png" alt="Hands holding drinks being cheered together">
@@ -196,9 +198,10 @@
                             </figure>
                         </section>
                     </div>
-                </section>
-                <input class="button" type="button" value="More curated">
+                </article>
             </div>
+                <input class="button" type="button" value="More curated">
+
 
         </main>
 
