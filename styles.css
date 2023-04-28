@@ -32,8 +32,8 @@ header h1, header p {
 }
 
 li {
-    display: inline;
     list-style-type: none;
+    margin-left: 120px;
 
 }
 
@@ -46,11 +46,21 @@ li:first-of-type {
     left: 50%;
     transform: translate(-50%,-50%);
     padding-bottom: 575px;
-    position: absolute;
-    z-index: 4;
     font-size: 40px;
-    padding-top: 60px;
 
+}
+
+a:first-of-type {
+    color: white;
+    margin-right: 220px;
+}
+
+li a {
+    display: block;
+    padding: 20px 20px;
+    text-decoration: none;
+    color: #ffffff;
+    z-index: 5;
 }
 
 
@@ -62,6 +72,7 @@ nav {
 
 nav h2 {
     display: none;
+    height: 1px;
 }
 
 li {
@@ -240,7 +251,64 @@ footer{
     width: 350px;
 }
 
-/*Customizing Scroll bar*/
+/*Nav Button*/
+ul {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    overflow: hidden;
+    background-color: #2104d9;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+}
+label {
+    cursor: pointer;
+    display: inline-block;
+    padding: 28px 20px;
+    position: relative;
+    user-select: none;
+}
+label span {
+    background-color: #ffffff;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background-color .2s ease-out;
+    width: 18px;
+}
+label span:before, label span:after {
+    background: #ffffff;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+label span:before {
+    top: 5px;
+}
+label span:after {
+    top: -5px;
+}
+input {
+    display: none;
+}
+input:checked ~ ul {
+    max-height: 500px;
+}
+input:checked ~ label span {
+    background: transparent;
+}
+input:checked ~ label span:before {
+    transform: rotate(-45deg);
+}
+input:checked ~ label span:after {
+    transform: rotate(45deg);
+}
+input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps) span:after {
+    top: 0;
+}
 
 
 /*Media Query*/
@@ -248,28 +316,52 @@ footer{
     body {
         width: 834px;
     }
-  
+
+    header {
+    width: 865px;
+    }
+
+    li {
+        display: inline;
+    }
+
+    li:first-of-type {
+        color: white;
+        font-variant: small-caps;
+        position:absolute;
+        font-size: 40px;
+        margin-left: 0px;
+    }
+
+    ul {
+        overflow: visible;
+        position: absolute;
+        top: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+
+    label span, input {
+        display: none;
+    }
+
+    #trending {
+    display: grid;
+    width: 834px;
+    grid-template-rows: auto 1fr;
+    grid-template-areas: "trendingTitle"
+                         "trendingContent";
+    }
+
+    
+
     #playlistWrapper {
         display: grid;
+        width: 834px;
         grid-template-columns: 1fr 1fr;
-        overflow: auto;
-        overflow-y: hidden;
+        grid-template-areas: "playlists curatedPlaylists";
     }
-
-    #playlists .scroll{
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(5, 1fr);
-        overflow: hidden;
-        grid-column-start: 1;
-    }
-
-    #curatedPlaylists .scroll{
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(5, 1fr);
-        overflow: hidden;
-    }
+   
 
 }
 
